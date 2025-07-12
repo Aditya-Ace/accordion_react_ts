@@ -22,70 +22,47 @@
 
 ### Default Variant
 
-\`\`\`tsx
-<ModernAccordion
-title="Getting Started"
-icon={<Sparkles className="w-5 h-5" />}
-defaultIsOpen
-
+```tsx
+<Accordion
+  title="Getting Started"
+  icon={<Sparkles className="w-5 h-5" />}
+  defaultIsOpen
 >
-
   <p>Your content here...</p>
-</ModernAccordion>
-\`\`\`
+</Accordion>
+```
 
 ### Gradient Variant
 
-\`\`\`tsx
-<ModernAccordion
-title="Beautiful Gradients"
-variant="gradient"
-size="lg"
-
->
-
+```tsx
+<Accordion title="Beautiful Gradients" variant="gradient" size="lg">
   <p>Stunning gradient backgrounds with smooth transitions</p>
-</ModernAccordion>
-\`\`\`
+</Accordion>
+```
 
 ### Glass Variant (Glassmorphism)
 
-\`\`\`tsx
-<ModernAccordion
-title="Glassmorphism Effect"
-variant="glass"
-
->
-
+```tsx
+<Accordion title="Glassmorphism Effect" variant="glass">
   <p>Modern glass effect with backdrop blur</p>
-</ModernAccordion>
-\`\`\`
+</Accordion>
+```
 
 ### Neon Variant (Cyberpunk Style)
 
-\`\`\`tsx
-<ModernAccordion
-title="Cyberpunk Theme"
-variant="neon"
-
->
-
+```tsx
+<Accordion title="Cyberpunk Theme" variant="neon">
   <p>Futuristic neon styling with glowing effects</p>
-</ModernAccordion>
-\`\`\`
+</Accordion>
+```
 
 ### Minimal Variant
 
-\`\`\`tsx
-<ModernAccordion
-title="Clean & Simple"
-variant="minimal"
-
->
-
+```tsx
+<Accordion title="Clean & Simple" variant="minimal">
   <p>Clean design focused on content</p>
-</ModernAccordion>
-\`\`\`
+</Accordion>
+```
 
 ## 🚀 Installation
 
@@ -96,7 +73,7 @@ variant="minimal"
 
 ### Install Dependencies
 
-\`\`\`bash
+```bash
 
 # Install the required packages
 
@@ -106,111 +83,103 @@ npm install framer-motion lucide-react clsx
 
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
-\`\`\`
+```
 
 ### Setup Tailwind CSS
 
 Add to your `tailwind.config.js`:
 
-\`\`\`js
+```js
 /** @type {import('tailwindcss').Config} \*/
 module.exports = {
-content: [
-"./index.html",
-"./src/**/\*.{js,ts,jsx,tsx}",
-],
-theme: {
-extend: {
-animation: {
-"accordion-down": "accordion-down 0.2s ease-out",
-"accordion-up": "accordion-up 0.2s ease-out",
-},
-keyframes: {
-"accordion-down": {
-from: { height: "0" },
-to: { height: "var(--radix-accordion-content-height)" },
-},
-"accordion-up": {
-from: { height: "var(--radix-accordion-content-height)" },
-to: { height: "0" },
-},
-},
-},
-},
-plugins: [],
-}
-\`\`\`
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+    },
+  },
+  plugins: [],
+};
+```
 
 Add to your CSS file:
 
-\`\`\`css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-\`\`\`
+```css
+@import "tailwindcss";
+```
 
 ## 📖 Usage
 
 ### Basic Usage
 
-\`\`\`tsx
-import { ModernAccordion } from './components/ModernAccordion'
-import { Settings } from 'lucide-react'
+```tsx
+import { Accordion } from "./components/Accordion";
+import { Settings } from "lucide-react";
 
 function App() {
-return (
-
-<div className="p-8">
-<ModernAccordion
-title="My Accordion"
-icon={<Settings className="w-5 h-5" />} >
-<p>This is the accordion content!</p>
-</ModernAccordion>
-</div>
-)
+  return (
+    <div className="p-8">
+      <Accordion title="My Accordion" icon={<Settings className="w-5 h-5" />}>
+        <p>This is the accordion content!</p>
+      </Accordion>
+    </div>
+  );
 }
-\`\`\`
+```
 
 ### Advanced Usage
 
-\`\`\`tsx
-import { ModernAccordion } from './components/ModernAccordion'
-import { User, Lock } from 'lucide-react'
+```tsx
+import { Accordion } from "./components/Accordion";
+import { User, Lock } from "lucide-react";
 
 function AdvancedExample() {
-const handleExpand = () => {
-console.log('Accordion expanded!')
-}
+  const handleExpand = () => {
+    console.log("Accordion expanded!");
+  };
 
-return (
-
-<div className="space-y-4">
-{/_ Gradient variant with custom styling _/}
-<ModernAccordion
-title="User Profile"
-variant="gradient"
-size="lg"
-icon={<User className="w-5 h-5 text-purple-500" />}
-onExpand={handleExpand}
-className="max-w-2xl"
-titleClassName="text-purple-800" >
-<div className="space-y-4">
-<h3>Profile Information</h3>
-<p>Manage your account settings and preferences.</p>
-</div>
-</ModernAccordion>
+  return (
+    <div className="space-y-4">
+      {/_ Gradient variant with custom styling _/}
+      <Accordion
+        title="User Profile"
+        variant="gradient"
+        size="lg"
+        icon={<User className="w-5 h-5 text-purple-500" />}
+        onExpand={handleExpand}
+        className="max-w-2xl"
+        titleClassName="text-purple-800"
+      >
+        <div className="space-y-4">
+          <h3>Profile Information</h3>
+          <p>Manage your account settings and preferences.</p>
+        </div>
+      </Accordion>
 
       {/* Locked accordion */}
-      <ModernAccordion
+      <Accordion
         title="Premium Content"
         icon={<Lock className="w-5 h-5 text-red-500" />}
         locked
       >
         <p>This content requires a premium subscription.</p>
-      </ModernAccordion>
+      </Accordion>
 
       {/* Custom title renderer */}
-      <ModernAccordion
+      <Accordion
         title="Custom Title"
         onRenderTitle={(title) => (
           <span className="flex items-center gap-2">
@@ -220,12 +189,11 @@ titleClassName="text-purple-800" >
         )}
       >
         <p>Accordion with custom title rendering.</p>
-      </ModernAccordion>
+      </Accordion>
     </div>
-
-)
+  );
 }
-\`\`\`
+```
 
 ## 📚 API Reference
 
@@ -269,58 +237,61 @@ titleClassName="text-purple-800" >
 
 ### Custom Styling
 
-\`\`\`tsx
-<ModernAccordion
-title="Custom Styled"
-className="border-2 border-blue-500 bg-blue-50"
-titleClassName="text-blue-800 font-bold"
-contentClassName="bg-blue-25 text-blue-700"
-
+```tsx
+<Accordion
+  title="Custom Styled"
+  className="border-2 border-blue-500 bg-blue-50"
+  titleClassName="text-blue-800 font-bold"
+  contentClassName="bg-blue-25 text-blue-700"
 >
-
   <p>Custom styled accordion content</p>
-</ModernAccordion>
-\`\`\`
+</Accordion>
+```
 
 ### Creating Your Own Variant
 
 You can extend the component by creating custom variants:
 
-\`\`\`tsx
+```tsx
 // Add to the variant type
-type CustomVariant = 'default' | 'gradient' | 'glass' | 'neon' | 'minimal' | 'custom'
+type CustomVariant =
+  | "default"
+  | "gradient"
+  | "glass"
+  | "neon"
+  | "minimal"
+  | "custom";
 
 // Then customize the styling logic in the component
-\`\`\`
+```
 
 ## 🌙 Dark Mode Support
 
 The accordion automatically supports dark mode when using Tailwind's dark mode classes:
 
-\`\`\`html
-
+```html
 <html class="dark">
   <!-- Your app content -->
 </html>
-\`\`\`
+```
 
 ## 🔧 Development
 
 ### Project Structure
 
-\`\`\`
+```
 src/
 ├── components/
-│ ├── ModernAccordion.tsx # Main accordion component
+│ ├── Accordion.tsx # Main accordion component
 │ └── AccordionDemo.tsx # Demo component
 ├── lib/
 │ └── utils.ts # Utility functions
 └── App.tsx # Main app component
-\`\`\`
+```
 
 ### Building
 
-\`\`\`bash
+```bash
 
 # Development
 
@@ -333,7 +304,7 @@ npm run build
 # Preview production build
 
 npm run preview
-\`\`\`
+```
 
 ## 🤝 Contributing
 
