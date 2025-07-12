@@ -1,12 +1,23 @@
 {
-  "name": "accordion_react",
+   "name": "accordion_react",
   "description": "A beautiful, accessible, and highly customizable accordion component for React applications",
-  "private": false,
-  "version": "1.1.0",
+  "version": "1.1.2",
   "type": "module",
+  "private": false,
+  "main": "./dist/index.js",   
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -p tsconfig.build.json && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
