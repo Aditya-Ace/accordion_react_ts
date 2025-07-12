@@ -1,12 +1,9 @@
 # 🎨 Modern React Accordion Component
 
 <div align="center">
-**A beautiful, accessible, and highly customizable accordion component for React applications**
-[Demo](#-demo) • [Installation](#-installation) • [Usage](#-usage) • [API](#-api-reference) • [Contributing](#-contributing)
+A beautiful, accessible, and highly customizable accordion component for React applications
 </div>
----
 ## ✨ Features
-
 - 🎨 **5 Beautiful Variants**: Default, Gradient, Glass, Neon, and Minimal styles
 - ♿ **Full Accessibility**: WCAG compliant with keyboard navigation and screen reader support
 - 📱 **Responsive Design**: Adapts perfectly to all screen sizes
