@@ -1,9 +1,8 @@
 # 🎨 Modern React Accordion Component
 
 <div align="center">
-A beautiful, accessible, and highly customizable accordion component for React applications**
+A beautiful, accessible, and highly customizable accordion component for React applications
 </div>
----
 ## ✨ Features
 
 - 🎨 **5 Beautiful Variants**: Default, Gradient, Glass, Neon, and Minimal styles
